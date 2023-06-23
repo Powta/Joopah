@@ -12,4 +12,3 @@ layer_0/tile_data = PackedInt32Array(-131079, 65537, 0, -131078, 65537, 0, -1310
 
 [node name="Joopah" parent="." instance=ExtResource("2_evotl")]
 position = Vector2(66, 31)
-jump_velocity = -300.0

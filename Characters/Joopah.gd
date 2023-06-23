@@ -2,7 +2,8 @@ extends CharacterBody2D
 
 
 @export var speed:float
-@export var jump_velocity:float
+#@export var jump_velocity:float 
+var jump_velocity=-400
 
 var previous_direction=1
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -22,9 +23,10 @@ func _physics_process(delta):
 			
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept"):
+		print(jump_velocity)
 		$JumpPressedRemember.start()
 	if is_on_floor():
-		velocity.y=0
+		#velocity.y=0
 		
 		#check if the player pressed the button within the last 0.2 secs	
 		if $JumpPressedRemember.time_left>0:
