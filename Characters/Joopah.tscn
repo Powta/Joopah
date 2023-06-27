@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ycxa4tp8dwp" path="res://Sprites/Joopah/Joop Jump.png" id="4_mqipm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xnda"]
+size = Vector2(18, 20)
 
 [sub_resource type="Animation" id="Animation_vaa7k"]
 resource_name = "Fall"
@@ -252,7 +253,9 @@ _data = {
 }
 
 [node name="Joopah" type="CharacterBody2D"]
+z_index = 10
 texture_filter = 1
+collision_mask = 14
 script = ExtResource("1_wdbkv")
 speed = 150.0
 

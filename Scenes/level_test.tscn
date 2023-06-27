@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cr41c8swyy2ke"]
+
+[ext_resource type="PackedScene" uid="uid://b5lu1ucs0ivg" path="res://Tileset/tile_map.tscn" id="1_2x22v"]
+[ext_resource type="Script" path="res://Scenes/level.gd" id="1_cyfqj"]
+[ext_resource type="PackedScene" uid="uid://uteklrqsk7jg" path="res://Characters/Joopah.tscn" id="2_evotl"]
+[ext_resource type="PackedScene" uid="uid://808rfgyph4rn" path="res://Object/door.tscn" id="4_6ceq3"]
+
+[node name="Level_Test" type="Node2D"]
+position = Vector2(-1, 0)
+script = ExtResource("1_cyfqj")
+level_name = "test"
+
+[node name="TileMap" parent="." instance=ExtResource("1_2x22v")]
+texture_filter = 1
+position = Vector2(235, 201)
+layer_0/tile_data = PackedInt32Array(196602, 65537, 1, 196603, 65537, 1, 196604, 65537, 1, 131069, 65537, 1, 131070, 65537, 1, 131071, 65537, 1, 196607, 65537, 1, 196606, 65537, 1, 196605, 65537, 1, 196601, 65537, 0, 196600, 65537, 0)
+
+[node name="Joopah" parent="." instance=ExtResource("2_evotl")]
+position = Vector2(69, 114)
+
+[node name="Door" parent="." instance=ExtResource("4_6ceq3")]
+position = Vector2(145, 239)

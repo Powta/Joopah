@@ -4,13 +4,19 @@ extends CharacterBody2D
 @export var speed:float
 #@export var jump_velocity:float 
 var jump_velocity=-400
+var can_open_door=false
 
 var previous_direction=1
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+signal player_entered_door
 
 func _physics_process(delta):
+	if Input.is_action_just_pressed("ui_up"):
+		if can_open_door==true:
+			emit_signal("player_entered_door")
+			
 	var direction = Input.get_axis("ui_left", "ui_right")
 	# Add the gravity.
 	if not is_on_floor():
@@ -23,7 +29,6 @@ func _physics_process(delta):
 			
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept"):
-		print(jump_velocity)
 		$JumpPressedRemember.start()
 	if is_on_floor():
 		#velocity.y=0
@@ -58,3 +63,7 @@ func _physics_process(delta):
 		$Joop.flip_h=true
 		
 	move_and_slide()
+
+
+
+	
