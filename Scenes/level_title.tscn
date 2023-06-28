@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://cuo6sb7e3uykt"]
+
+[ext_resource type="Script" path="res://Scenes/level.gd" id="1_0ymnb"]
+[ext_resource type="PackedScene" uid="uid://b5lu1ucs0ivg" path="res://Tileset/tile_map.tscn" id="2_7qhnk"]
+[ext_resource type="PackedScene" uid="uid://uteklrqsk7jg" path="res://Characters/Joopah.tscn" id="3_cqg48"]
+[ext_resource type="PackedScene" uid="uid://808rfgyph4rn" path="res://Object/door.tscn" id="4_j8j1y"]
+[ext_resource type="PackedScene" uid="uid://dkkg21mqug0o8" path="res://Object/key.tscn" id="5_ef7m3"]
+
+[node name="Level_Title" type="Node2D"]
+position = Vector2(-1, 0)
+script = ExtResource("1_0ymnb")
+level_name = "title"
+
+[node name="TileMap" parent="." instance=ExtResource("2_7qhnk")]
+texture_filter = 1
+position = Vector2(235, 201)
+layer_0/tile_data = PackedInt32Array(65518, 65537, 1, 65519, 65537, 1, 131055, 65537, 1, 196591, 65537, 1, 262127, 65537, 1, 262126, 65537, 1, 262125, 65537, 1, 196589, 65537, 1, 131053, 65537, 1, 65517, 65537, 1)
+
+[node name="Door" parent="." instance=ExtResource("4_j8j1y")]
+position = Vector2(-169, 432)
+
+[node name="Key" parent="." instance=ExtResource("5_ef7m3")]
+position = Vector2(-176, 357)
+
+[node name="Joopah" parent="." instance=ExtResource("3_cqg48")]
+position = Vector2(-184, 259)

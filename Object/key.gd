@@ -1,5 +1,6 @@
 extends Area2D
 
+signal key_collected
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -9,8 +10,7 @@ func _ready():
 func _process(delta):
 	pass
 
-func _on_body_entered(body):
-	body.can_open_door=true
 
-func _on_key_collected():
-	$AnimationPlayer.play("unlocked")
+func _on_body_entered(body):
+	emit_signal("key_collected")
+	queue_free()

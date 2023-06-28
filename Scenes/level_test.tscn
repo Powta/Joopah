@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cr41c8swyy2ke"]
+[gd_scene load_steps=6 format=3 uid="uid://cr41c8swyy2ke"]
 
 [ext_resource type="PackedScene" uid="uid://b5lu1ucs0ivg" path="res://Tileset/tile_map.tscn" id="1_2x22v"]
 [ext_resource type="Script" path="res://Scenes/level.gd" id="1_cyfqj"]
 [ext_resource type="PackedScene" uid="uid://uteklrqsk7jg" path="res://Characters/Joopah.tscn" id="2_evotl"]
 [ext_resource type="PackedScene" uid="uid://808rfgyph4rn" path="res://Object/door.tscn" id="4_6ceq3"]
+[ext_resource type="PackedScene" uid="uid://dkkg21mqug0o8" path="res://Object/key.tscn" id="5_veuc8"]
 
 [node name="Level_Test" type="Node2D"]
 position = Vector2(-1, 0)
@@ -20,3 +21,6 @@ position = Vector2(69, 114)
 
 [node name="Door" parent="." instance=ExtResource("4_6ceq3")]
 position = Vector2(145, 239)
+
+[node name="Key" parent="." instance=ExtResource("5_veuc8")]
+position = Vector2(225, 213)
