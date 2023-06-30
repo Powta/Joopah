@@ -1,12 +1,67 @@
-[gd_scene load_steps=12 format=3 uid="uid://uteklrqsk7jg"]
+[gd_scene load_steps=14 format=3 uid="uid://uteklrqsk7jg"]
 
 [ext_resource type="Texture2D" uid="uid://dmwy2gwnnidko" path="res://Sprites/Joopah/Joop.png" id="1_4r4ry"]
 [ext_resource type="Script" path="res://Characters/Joopah.gd" id="1_wdbkv"]
 [ext_resource type="Texture2D" uid="uid://lk58gr4um3su" path="res://Sprites/Joopah/Joop Run.png" id="3_eagfk"]
 [ext_resource type="Texture2D" uid="uid://ycxa4tp8dwp" path="res://Sprites/Joopah/Joop Jump.png" id="4_mqipm"]
+[ext_resource type="Texture2D" uid="uid://o2r1y4ghwm32" path="res://Sprites/Joopah/Joopah Death-Sheet.png" id="5_wxhs7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xnda"]
 size = Vector2(18, 20)
+
+[sub_resource type="Animation" id="Animation_emixv"]
+resource_name = "Death"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Joop:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_wxhs7")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Joop:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Joop:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"death_signal"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_vaa7k"]
 resource_name = "Fall"
@@ -245,6 +300,7 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_paley"]
 _data = {
+"Death": SubResource("Animation_emixv"),
 "Fall": SubResource("Animation_vaa7k"),
 "Idle": SubResource("Animation_0jggv"),
 "Jump": SubResource("Animation_rk77v"),

@@ -7,11 +7,6 @@ func _ready():
 	current_level.connect("level_cleared",_on_level_cleared)
 	current_level.connect("player_died",_on_player_died)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func _on_level_cleared(current_level_name:String):
 	var next_level #the actual scene we're gonna instance
 	var next_level_name:String
@@ -25,9 +20,23 @@ func _on_level_cleared(current_level_name:String):
 		"1":
 			next_level_name="2"
 		"2":
-			return
-		_:#This is error
-			return
+			next_level_name="3"
+		"3":
+			next_level_name="4"
+		"4":
+			next_level_name="5"
+		"5":
+			next_level_name="6"
+		"6":
+			next_level_name="7"
+		"7":
+			next_level_name="8"
+		"8":
+			next_level_name="9"
+		"9":
+			next_level_name="10"
+		"10":
+			next_level_name="ending"
 	next_level=load("res://Scenes/level_"+next_level_name+".tscn").instantiate() #in godot 4, to get instance of a scene, you use instantiate function
 	
 	add_child(next_level)#adds the new level to the scene switcher node
@@ -40,8 +49,7 @@ func _on_level_cleared(current_level_name:String):
 
 func _on_player_died(current_level_name:String):
 	var level=load("res://Scenes/level_"+current_level_name+".tscn").instantiate()
-	print(current_level_name)
-	add_child(level)
+	call_deferred("add_child",level)
 	current_level.queue_free() 
 	current_level=level
 	current_level.connect("level_cleared",_on_level_cleared)

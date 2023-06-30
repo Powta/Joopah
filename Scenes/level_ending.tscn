@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://bpi4xaii6w4wy"]
+
+[ext_resource type="Script" path="res://Scenes/level.gd" id="1_ch2ik"]
+[ext_resource type="PackedScene" uid="uid://b5lu1ucs0ivg" path="res://Tileset/tile_map.tscn" id="2_jy668"]
+[ext_resource type="PackedScene" uid="uid://808rfgyph4rn" path="res://Object/door.tscn" id="3_u4xqi"]
+[ext_resource type="PackedScene" uid="uid://dkkg21mqug0o8" path="res://Object/key.tscn" id="4_g7vgm"]
+[ext_resource type="PackedScene" uid="uid://uteklrqsk7jg" path="res://Characters/Joopah.tscn" id="5_1m3w0"]
+
+[node name="Level_Title" type="Node2D"]
+position = Vector2(-1, 0)
+script = ExtResource("1_ch2ik")
+level_name = "ending"
+
+[node name="TileMap" parent="." instance=ExtResource("2_jy668")]
+texture_filter = 1
+position = Vector2(235, 201)
+layer_0/tile_data = PackedInt32Array(65518, 65537, 1, 65519, 65537, 1, 131055, 65537, 1, 196591, 65537, 1, 262127, 65537, 1, 262126, 65537, 1, 262125, 65537, 1, 196589, 65537, 1, 131053, 65537, 1, 65517, 65537, 1, 19, 65537, 1, 18, 65537, 1, 65554, 65537, 1, 131090, 65537, 1, 196626, 65537, 1, 196627, 65537, 1, 196628, 65537, 1, 131092, 65537, 1, 65556, 65537, 1, 20, 65537, 1)
+
+[node name="Door" parent="." instance=ExtResource("3_u4xqi")]
+position = Vector2(-169, 432)
+
+[node name="Key" parent="." instance=ExtResource("4_g7vgm")]
+position = Vector2(-176, 357)
+
+[node name="Joopah" parent="." instance=ExtResource("5_1m3w0")]
+position = Vector2(705, 259)
+is_dead = true
