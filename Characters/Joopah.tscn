@@ -1,10 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://uteklrqsk7jg"]
+[gd_scene load_steps=17 format=3 uid="uid://uteklrqsk7jg"]
 
 [ext_resource type="Texture2D" uid="uid://dmwy2gwnnidko" path="res://Sprites/Joopah/Joop.png" id="1_4r4ry"]
 [ext_resource type="Script" path="res://Characters/Joopah.gd" id="1_wdbkv"]
 [ext_resource type="Texture2D" uid="uid://lk58gr4um3su" path="res://Sprites/Joopah/Joop Run.png" id="3_eagfk"]
 [ext_resource type="Texture2D" uid="uid://ycxa4tp8dwp" path="res://Sprites/Joopah/Joop Jump.png" id="4_mqipm"]
 [ext_resource type="Texture2D" uid="uid://o2r1y4ghwm32" path="res://Sprites/Joopah/Joopah Death-Sheet.png" id="5_wxhs7"]
+[ext_resource type="AudioStream" uid="uid://cugpiyljusbov" path="res://Music/jump_08.wav" id="6_d4ebo"]
+[ext_resource type="AudioStream" uid="uid://df414mr83771r" path="res://Music/Hurt.wav" id="7_yencu"]
+[ext_resource type="AudioStream" uid="uid://devwj84l47umm" path="res://Music/Death.wav" id="8_8utxy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xnda"]
 size = Vector2(18, 20)
@@ -60,6 +63,20 @@ tracks/3/keys = {
 "values": [{
 "args": [],
 "method": &"death_signal"
+}]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"death_explosion_sound"
 }]
 }
 
@@ -331,3 +348,12 @@ libraries = {
 
 [node name="JumpPressedRemember" type="Timer" parent="."]
 wait_time = 0.2
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_d4ebo")
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_yencu")
+
+[node name="Death" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_8utxy")

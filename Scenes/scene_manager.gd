@@ -17,6 +17,7 @@ func _on_level_cleared(current_level_name:String):
 			next_level_name="1"
 		"title":
 			next_level_name="1"
+			$BGMusic1.play()
 		"1":
 			next_level_name="2"
 		"2":
@@ -37,6 +38,8 @@ func _on_level_cleared(current_level_name:String):
 			next_level_name="10"
 		"10":
 			next_level_name="ending"
+			$BGMusic1.stop()
+			$BGMusic2.play()
 	next_level=load("res://Scenes/level_"+next_level_name+".tscn").instantiate() #in godot 4, to get instance of a scene, you use instantiate function
 	
 	add_child(next_level)#adds the new level to the scene switcher node

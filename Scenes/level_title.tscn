@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cuo6sb7e3uykt"]
+[gd_scene load_steps=7 format=3 uid="uid://cuo6sb7e3uykt"]
 
 [ext_resource type="Script" path="res://Scenes/level.gd" id="1_0ymnb"]
 [ext_resource type="PackedScene" uid="uid://b5lu1ucs0ivg" path="res://Tileset/tile_map.tscn" id="2_7qhnk"]
 [ext_resource type="PackedScene" uid="uid://uteklrqsk7jg" path="res://Characters/Joopah.tscn" id="3_cqg48"]
 [ext_resource type="PackedScene" uid="uid://808rfgyph4rn" path="res://Object/door.tscn" id="4_j8j1y"]
 [ext_resource type="PackedScene" uid="uid://dkkg21mqug0o8" path="res://Object/key.tscn" id="5_ef7m3"]
+[ext_resource type="PackedScene" uid="uid://l6584vm5jm2v" path="res://Text/press_space.tscn" id="6_jsm5d"]
 
 [node name="Level_Title" type="Node2D"]
 position = Vector2(-1, 0)
@@ -25,3 +26,10 @@ position = Vector2(-176, 357)
 [node name="Joopah" parent="." instance=ExtResource("3_cqg48")]
 position = Vector2(705, 259)
 is_dead = true
+
+[node name="PressSpace" parent="." instance=ExtResource("6_jsm5d")]
+offset_left = 173.0
+offset_top = 289.0
+offset_right = 477.0
+offset_bottom = 312.0
+text = "Press Space to play"

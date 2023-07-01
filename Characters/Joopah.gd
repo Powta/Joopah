@@ -74,6 +74,7 @@ func movement(_delta):
 		#check if the player pressed the button within the last 0.2 secs	
 		if $JumpPressedRemember.time_left>0:
 			$JumpPressedRemember.stop()
+			$Jump.play()
 			velocity.y =jump_velocity
 			
 	#If you release the jump button early	
@@ -107,10 +108,12 @@ func _on_key_collected():
 
 func death():
 	is_dead=true
+	$Hurt.play()
 	$AnimationPlayer.play("Death")
 	
 func death_signal():
 	emit_signal("player_death")
-
-
+	
+func death_explosion_sound():
+	$Death.play()
 	

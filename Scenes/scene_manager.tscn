@@ -1,9 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvnjo57awiqpr"]
+[gd_scene load_steps=5 format=3 uid="uid://cvnjo57awiqpr"]
 
 [ext_resource type="Script" path="res://Scenes/scene_manager.gd" id="1_imnxj"]
 [ext_resource type="PackedScene" uid="uid://cuo6sb7e3uykt" path="res://Scenes/level_title.tscn" id="2_ockcu"]
+[ext_resource type="AudioStream" uid="uid://ghu51ansuf07" path="res://Music/overworld theme.wav" id="3_glcow"]
+[ext_resource type="AudioStream" uid="uid://cpkhxgbohqxai" path="res://Music/win.wav" id="4_27vlq"]
 
 [node name="SceneManager" type="Node2D"]
 script = ExtResource("1_imnxj")
 
 [node name="Level_Title" parent="." instance=ExtResource("2_ockcu")]
+
+[node name="BGMusic1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_glcow")
+
+[node name="BGMusic2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_27vlq")
